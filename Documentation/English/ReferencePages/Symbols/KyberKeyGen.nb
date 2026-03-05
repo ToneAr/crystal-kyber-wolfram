@@ -1,0 +1,680 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 15.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[     24955,        670]
+NotebookOptionsPosition[     16423,        496]
+NotebookOutlinePosition[     17212,        522]
+CellTagsIndexPosition[     17133,        517]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["KyberKeyGen", "ObjectName",
+ CellID->354800,ExpressionUUID->"3a59cd3f-aa84-484c-8c9d-bc7e37876e48"],
+
+Cell[TextData[{
+ Cell["   ", "ModInfo",ExpressionUUID->"3fab6d8f-ca3a-4f55-b332-d01a6142e0c3"],
+ Cell[BoxData[
+  RowBox[{
+   ButtonBox["KyberKeyGen",
+    BaseStyle->"Link",
+    ButtonData->"paclet:ToneAr/Kyber/ref/KyberKeyGen"], "[", 
+   StyleBox["level", "TI"], "]"}]], "InlineFormula",ExpressionUUID->
+  "769b3eec-e8e5-4657-8186-c94752bc9327"],
+ " \[LineSeparator]generates an ML-KEM (CRYSTALS-Kyber) key pair at the \
+specified security ",
+ Cell[BoxData[
+  StyleBox["level", "TI"]], "InlineFormula",ExpressionUUID->
+  "a1b2c3d4-e5f6-7890-abcd-ef1234567890"],
+ "."
+}], "Usage",
+ CellChangeTimes->{{3.9, 4.}},
+ CellID->1205012398,ExpressionUUID->"e2e44746-ae14-4e5d-a9e0-96d6931afd9e"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  StyleBox["level", "TI"]], "InlineFormula",ExpressionUUID->
+  "b2c3d4e5-f6a7-8901-bcde-f12345678901"],
+ " can be 512, 768, or 1024. The default is 768."
+}], "Notes",
+ CellID->1323799617,ExpressionUUID->"5d730285-a06f-4070-8b0f-2328ea865fe6"],
+
+Cell["The returned association contains two keys:", "Notes",
+ CellID->1323799618,ExpressionUUID->"c3d4e5f6-a7b8-9012-cdef-123456789012"],
+
+Cell[TextData[{
+ "\"PublicKey\": ",
+ Cell[BoxData[
+  ButtonBox["PublicKey",
+   BaseStyle->"Link"]], "InlineFormula",ExpressionUUID->
+  "d4e5f6a7-b8c9-0123-defa-234567890123"],
+ " object suitable for ",
+ Cell[BoxData[
+  ButtonBox["KyberEncapsulate",
+   BaseStyle->"Link",
+   ButtonData->"paclet:ToneAr/Kyber/ref/KyberEncapsulate"]], "InlineFormula",
+  ExpressionUUID->"e5f6a7b8-c9d0-1234-efab-345678901234"],
+ "."
+}], "Notes",
+ CellChangeTimes->{{3.981661886837226*^9, 3.981661900756052*^9}},
+ CellID->1323799619,ExpressionUUID->"f6a7b8c9-d0e1-2345-fabc-456789012345"],
+
+Cell[TextData[{
+ "\"PrivateKey\": ",
+ Cell[BoxData[
+  ButtonBox["PrivateKey",
+   BaseStyle->"Link"]], "InlineFormula",ExpressionUUID->
+  "a7b8c9d0-e1f2-3456-abcd-567890123456"],
+ " object suitable for ",
+ Cell[BoxData[
+  ButtonBox["KyberDecapsulate",
+   BaseStyle->"Link",
+   ButtonData->"paclet:ToneAr/Kyber/ref/KyberDecapsulate"]], "InlineFormula",
+  ExpressionUUID->"b8c9d0e1-f2a3-4567-bcde-678901234567"],
+ "."
+}], "Notes",
+ CellChangeTimes->{{3.981661904600587*^9, 3.981661905358865*^9}},
+ CellID->1323799620,ExpressionUUID->"c9d0e1f2-a3b4-5678-cdef-789012345678"],
+
+Cell["\<\
+Security levels correspond to NIST post-quantum security levels: 512 (Level \
+1), 768 (Level 3), 1024 (Level 5).\
+\>", "Notes",
+ CellID->1323799621,ExpressionUUID->"d0e1f2a3-b4c5-6789-defa-890123456789"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "See Also",
+ Cell[BoxData[
+  TemplateBox[{"SeeAlso", 
+    Cell[
+     BoxData[
+      FrameBox[
+       Cell[
+       "Insert links to any related reference (function) pages.", 
+        "MoreInfoText"], BaseStyle -> "IFrameBox"]], "MoreInfoTextOuter"]},
+   "MoreInfoOpenerButtonTemplate"]],ExpressionUUID->
+  "ea7143a3-6e36-4588-a03c-09eef13b1a92"]
+}], "SeeAlsoSection",
+ CellID->1192751671,ExpressionUUID->"fafcf0af-e939-4a8e-b177-922e10931d4c"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  ButtonBox["KyberEncapsulate",
+   BaseStyle->"Link",
+   ButtonData->"paclet:ToneAr/Kyber/ref/KyberEncapsulate"]], 
+  "InlineSeeAlsoFunction",
+  TaggingRules->{"PageType" -> "Function"},ExpressionUUID->
+  "0c70b865-0647-4f87-9ba0-305ca613ee5b"],
+ StyleBox[" \[FilledVerySmallSquare] ", "InlineSeparator"],
+ Cell[BoxData[
+  ButtonBox["KyberDecapsulate",
+   BaseStyle->"Link",
+   ButtonData->"paclet:ToneAr/Kyber/ref/KyberDecapsulate"]], 
+  "InlineSeeAlsoFunction",
+  TaggingRules->{"PageType" -> "Function"},ExpressionUUID->
+  "f1a2b3c4-d5e6-7890-abcd-ef1234567890"],
+ StyleBox[" \[FilledVerySmallSquare] ", "InlineSeparator"],
+ Cell[BoxData[
+  ButtonBox["GenerateAsymmetricKeyPair",
+   BaseStyle->"Link"]], "InlineSeeAlsoFunction",
+  TaggingRules->{"PageType" -> "Function"},ExpressionUUID->
+  "a2b3c4d5-e6f7-8901-bcde-f12345678901"]
+}], "SeeAlso",
+ CellID->1659708487,ExpressionUUID->"aa263b2c-50d7-4a03-8f1c-9578b015afac"]
+}, Open  ]],
+
+Cell[TextData[{
+ "Tech Notes",
+ Cell[BoxData[
+  TemplateBox[{"TechNotes", 
+    Cell[
+     BoxData[
+      FrameBox[
+       Cell["Insert links to related tech notes.", "MoreInfoText"], BaseStyle -> 
+       "IFrameBox"]], "MoreInfoTextOuter"]},
+   "MoreInfoOpenerButtonTemplate"]],ExpressionUUID->
+  "18ae19c2-c4f3-4d50-a7d4-7f5965c1535c"]
+}], "TechNotesSection",
+ CellID->495560011,ExpressionUUID->"90d6f341-a33c-4be0-9f97-31021ac1605b"],
+
+Cell["Related Guides", "MoreAboutSection",
+ CellID->341460774,ExpressionUUID->"6cab6112-698a-4d4c-bfc6-8f0c351f1596"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Related Links",
+ Cell[BoxData[
+  TemplateBox[{"RelatedLinks", 
+    Cell[
+     BoxData[
+      FrameBox[
+       Cell[
+       "Insert links to any related page, including web pages.", 
+        "MoreInfoText"], BaseStyle -> "IFrameBox"]], "MoreInfoTextOuter"]},
+   "MoreInfoOpenerButtonTemplate"]],ExpressionUUID->
+  "7924780f-cc7b-4d5d-8146-6d2ae27440fa"]
+}], "RelatedLinksSection",
+ CellID->1854919821,ExpressionUUID->"e3213627-d878-41d6-9806-a6d49de5afd1"],
+
+Cell[TextData[ButtonBox["NIST Post-Quantum Cryptography",
+ BaseStyle->"Hyperlink",
+ ButtonData->{
+   URL["https://csrc.nist.gov/projects/post-quantum-cryptography"], 
+   None}]], "RelatedLinks",
+ CellID->736223186,ExpressionUUID->"7c0986a3-91c2-416c-ac0d-6456942a1fb1"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Examples Initialization",
+ Cell[BoxData[
+  TemplateBox[{"ExamplesInitialization", 
+    Cell[
+     BoxData[
+      FrameBox[
+       Cell[
+       "Input that is to be evaluated before any examples are run, e.g. \
+Needs[\[Ellipsis]].", "MoreInfoText"], BaseStyle -> "IFrameBox"]], 
+     "MoreInfoTextOuter"]},
+   "MoreInfoOpenerButtonTemplate"]],ExpressionUUID->
+  "c71c257c-fc48-4e98-a982-0b5c5a20b486"]
+}], "ExamplesInitializationSection",
+ CellID->2132030958,ExpressionUUID->"e21d3610-0409-42ae-88fc-1dbc380fa4c6"],
+
+Cell[BoxData[
+ RowBox[{"Needs", "[", "\"\<ToneAr`Kyber`\>\"", 
+  "]"}]], "ExampleInitialization",
+ CellID->1564855684,ExpressionUUID->"350b7f89-0330-41d2-8450-de97d5c5e2b0"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {
+     StyleBox[
+      RowBox[{"Basic", " ", "Examples"}], "PrimaryExamplesSection"], 
+     ButtonBox[
+      RowBox[{
+       RowBox[{"More", " ", "Examples"}], " ", "\[RightTriangle]"}],
+      BaseStyle->"ExtendedExamplesLink",
+      ButtonData:>"ExtendedExamples"]}
+   }],
+  $Line = 0; Null]], "PrimaryExamplesSection",
+ CellID->1822645631,ExpressionUUID->"f24b39e0-3c0c-41b6-82c7-ad10e0488396"],
+
+Cell["Generate a Kyber-768 key pair:", "ExampleText",
+ CellID->100000001,ExpressionUUID->"10000001-0000-0000-0000-000000000001"],
+
+Cell[BoxData[
+ RowBox[{"keys", " ", "=", " ", 
+  RowBox[{"KyberKeyGen", "[", "768", "]"}]}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->100000002,ExpressionUUID->"10000002-0000-0000-0000-000000000002"],
+
+Cell["Extract the public and private keys:", "ExampleText",
+ CellID->100000003,ExpressionUUID->"10000003-0000-0000-0000-000000000003"],
+
+Cell[BoxData[
+ RowBox[{"keys", "[", "\"\<PublicKey\>\"", "]"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->100000004,ExpressionUUID->"10000004-0000-0000-0000-000000000004"],
+
+Cell[BoxData[
+ RowBox[{"keys", "[", "\"\<PrivateKey\>\"", "]"}]], "Input",
+ CellLabel->"In[3]:=",
+ CellID->100000005,ExpressionUUID->"10000005-0000-0000-0000-000000000005"],
+
+Cell["Generate a key pair using the default security level (768):", \
+"ExampleText",
+ CellID->100000006,ExpressionUUID->"10000006-0000-0000-0000-000000000006"],
+
+Cell[BoxData[
+ RowBox[{"KyberKeyGen", "[", "]"}]], "Input",
+ CellLabel->"In[4]:=",
+ CellID->100000007,ExpressionUUID->"10000007-0000-0000-0000-000000000007"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "More Examples",
+ Cell[BoxData[
+  TemplateBox[{"MoreExamples", 
+    Cell[
+     BoxData[
+      FrameBox[
+       Cell["Extended examples in standardized sections.", "MoreInfoText"], 
+       BaseStyle -> "IFrameBox"]], "MoreInfoTextOuter"]},
+   "MoreInfoOpenerButtonTemplate"]],ExpressionUUID->
+  "4bc6164e-5646-422c-a1ed-d72245c3e317"]
+}], "ExtendedExamplesSection",
+ CellTags->"ExtendedExamples",
+ CellID->2002713944,ExpressionUUID->"032a9984-9cf8-4f16-9efc-56827ad094f2"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "Scope", "ExampleSection",ExpressionUUID->
+   "805a2935-ad59-46d5-830d-3854150b6295"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->926816824,ExpressionUUID->"d51d81f4-aefb-4b17-bfa2-86fe003dfdf7"],
+
+Cell["Generate key pairs at all supported security levels:", "ExampleText",
+ CellID->100000010,ExpressionUUID->"10000010-0000-0000-0000-000000000010"],
+
+Cell[BoxData[
+ RowBox[{"KyberKeyGen", "[", "512", "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->100000011,ExpressionUUID->"10000011-0000-0000-0000-000000000011"],
+
+Cell[BoxData[
+ RowBox[{"KyberKeyGen", "[", "768", "]"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->100000012,ExpressionUUID->"10000012-0000-0000-0000-000000000012"],
+
+Cell[BoxData[
+ RowBox[{"KyberKeyGen", "[", "1024", "]"}]], "Input",
+ CellLabel->"In[3]:=",
+ CellID->100000013,ExpressionUUID->"10000013-0000-0000-0000-000000000013"]
+}, Open  ]],
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "Generalizations & Extensions", "ExampleSection",ExpressionUUID->
+   "88c01ff6-f807-48fd-8c93-abdc4e82d966"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->796713006,ExpressionUUID->"732accfa-ed84-441c-81c0-06217e69c784"],
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "Options", "ExampleSection",ExpressionUUID->
+   "df4adebe-a0e2-4d48-a5d6-2855650dcf83"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->1703738072,ExpressionUUID->"84fc9471-cf70-478f-8b5a-b93150375765"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "Applications", "ExampleSection",ExpressionUUID->
+   "c23781f0-b6e1-40d6-9ba5-5dbe2b07bdd3"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->1355117666,ExpressionUUID->"ff819f7b-f176-4d32-9599-cfa1609006a3"],
+
+Cell["\<\
+Generate a key pair and use it for a full key encapsulation round-trip:\
+\>", "ExampleText",
+ CellID->100000020,ExpressionUUID->"10000020-0000-0000-0000-000000000020"],
+
+Cell[BoxData[
+ RowBox[{"keys", " ", "=", " ", 
+  RowBox[{"KyberKeyGen", "[", "768", "]"}]}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->100000021,ExpressionUUID->"10000021-0000-0000-0000-000000000021"],
+
+Cell[BoxData[
+ RowBox[{"encap", " ", "=", " ", 
+  RowBox[{"KyberEncapsulate", "[", 
+   RowBox[{"keys", "[", "\"\<PublicKey\>\"", "]"}], "]"}]}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->100000022,ExpressionUUID->"10000022-0000-0000-0000-000000000022"],
+
+Cell[BoxData[
+ RowBox[{"decap", " ", "=", " ", 
+  RowBox[{"KyberDecapsulate", "[", 
+   RowBox[{
+    RowBox[{"encap", "[", "\"\<CipherText\>\"", "]"}], ",", " ", 
+    RowBox[{"keys", "[", "\"\<PrivateKey\>\"", "]"}]}], "]"}]}]], "Input",
+ CellLabel->"In[3]:=",
+ CellID->100000023,ExpressionUUID->"10000023-0000-0000-0000-000000000023"],
+
+Cell["Verify the shared secrets match:", "ExampleText",
+ CellID->100000024,ExpressionUUID->"10000024-0000-0000-0000-000000000024"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"encap", "[", "\"\<SharedSecret\>\"", "]"}], " ", "===", " ", 
+  "decap"}]], "Input",
+ CellLabel->"In[4]:=",
+ CellID->100000025,ExpressionUUID->"10000025-0000-0000-0000-000000000025"]
+}, Open  ]],
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "Properties & Relations", "ExampleSection",ExpressionUUID->
+   "85ff1b62-5c7f-4612-b6fe-cf469745aef6"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->2121363768,ExpressionUUID->"5fb6c76a-c09c-452e-96d6-8c623d852b8a"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "Possible Issues", "ExampleSection",ExpressionUUID->
+   "8c70f206-cf30-4320-b48b-872f0f503625"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->63135751,ExpressionUUID->"fc500816-49de-4cf7-b4f2-2453cd699c44"],
+
+Cell["An invalid security level produces a failure:", "ExampleText",
+ CellID->100000030,ExpressionUUID->"10000030-0000-0000-0000-000000000030"],
+
+Cell[BoxData[
+ RowBox[{"KyberKeyGen", "[", "256", "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->100000031,ExpressionUUID->"10000031-0000-0000-0000-000000000031"]
+}, Open  ]],
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "Interactive Examples", "ExampleSection",ExpressionUUID->
+   "e8f21636-b89c-4a05-91a5-b8556f3e2cf8"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->1339017150,ExpressionUUID->"abeb4e55-7e32-4076-8032-9d09c2349b60"],
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "Neat Examples", "ExampleSection",ExpressionUUID->
+   "88c0495f-79bf-4fd6-8e28-b257c11993e0"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->1044708344,ExpressionUUID->"8e48cf7e-965e-4492-99e6-4cf8a747ddb0"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Metadata", "MetadataSection",
+ CellID->1789002086,ExpressionUUID->"49140271-b606-461c-85fc-5da1a6edb710"],
+
+Cell[TextData[{
+ "New in: ",
+ Cell["0.9.0", "HistoryData",
+  CellTags->"New",ExpressionUUID->"1fc8ea0b-4433-4ece-8912-ec9bff950e52"],
+ " | Modified in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Modified",ExpressionUUID->"15668e43-45a4-44cf-97df-c2677980e56c"],
+ " | Obsolete in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Obsolete",ExpressionUUID->
+  "4e7c608c-1f9e-460f-8d9f-e08c7ce9826b"]
+}], "History",
+ CellID->1199926962,ExpressionUUID->"76b93e53-c25d-48bf-82da-0c5cbe0061d2"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Categorization",
+ Cell[BoxData[
+  TemplateBox[{"Metadata", 
+    Cell[
+     BoxData[
+      FrameBox[
+       Cell[
+       "Metadata such as page URI, context, and type of documentation page.", 
+        "MoreInfoText"], BaseStyle -> "IFrameBox"]], "MoreInfoTextOuter"]},
+   "MoreInfoOpenerButtonTemplate"]],ExpressionUUID->
+  "26438180-b69c-4890-8f0f-0a320f9842aa"]
+}], "CategorizationSection",
+ CellID->1013863878,ExpressionUUID->"c7de4e6d-8c6a-4732-94e9-1daf0f73aaa3"],
+
+Cell["Symbol", "Categorization",
+ CellLabel->"Entity Type",
+ CellID->1327038404,ExpressionUUID->"d46cc0ca-c276-4f1e-9d7c-69443cade015"],
+
+Cell["ToneAr/Kyber", "Categorization",
+ CellLabel->"Paclet Name",
+ CellID->1474282988,ExpressionUUID->"a130fad1-feb9-4625-8fda-1e5fdfda1323"],
+
+Cell["ToneAr`Kyber`", "Categorization",
+ CellLabel->"Context",
+ CellID->1759639072,ExpressionUUID->"45be9303-1a3c-473e-bd10-6692774bbacd"],
+
+Cell["ToneAr/Kyber/ref/KyberKeyGen", "Categorization",
+ CellLabel->"URI",
+ CellID->1327393204,ExpressionUUID->"cd87142f-4be4-4404-bf64-ef8c6181d498"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Keywords", "KeywordsSection",
+ CellID->531811738,ExpressionUUID->"3bda5161-825c-4204-aad1-d90f250aa92a"],
+
+Cell["Kyber", "Keywords",
+ CellID->935955041,ExpressionUUID->"927d684e-de4b-4c73-9845-eff34adbf2c9"],
+
+Cell["ML-KEM", "Keywords",
+ CellID->935955042,ExpressionUUID->"92700001-0000-0000-0000-000000000001"],
+
+Cell["post-quantum cryptography", "Keywords",
+ CellID->935955043,ExpressionUUID->"92700002-0000-0000-0000-000000000002"],
+
+Cell["key generation", "Keywords",
+ CellID->935955044,ExpressionUUID->"92700003-0000-0000-0000-000000000003"],
+
+Cell["KEM", "Keywords",
+ CellID->935955045,ExpressionUUID->"92700004-0000-0000-0000-000000000004"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Syntax Templates", "TemplatesSection",
+ CellID->372661228,ExpressionUUID->"1f35582f-7220-45e9-98f6-378f3ad3fffa"],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Additional Function Template",
+ CellID->44036578,ExpressionUUID->"7c836933-e661-4d23-b958-7d6a809fff49"],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Arguments Pattern",
+ CellID->1431515052,ExpressionUUID->"239aea5f-e158-4d22-a6c3-2b2e73717ceb"],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Local Variables",
+ CellID->224806788,ExpressionUUID->"66515433-efd9-4bb4-9d17-7f1b9e092d2b"],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Color Equal Signs",
+ CellID->385497352,ExpressionUUID->"822ba1db-3036-4f5d-bd56-b599b1d19298"]
+}, Closed]]
+}, Open  ]]
+},
+WindowSize->{700.5, 770.25},
+WindowMargins->{{318, Automatic}, {Automatic, 132.75}},
+TaggingRules-><|"Paclet" -> "ToneAr/Kyber"|>,
+Magnification:>1. Inherited,
+FrontEndVersion->"15.0 for Linux x86 (64-bit) (December 21, 2025)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "FunctionPageStylesExt.nb", 
+  CharacterEncoding -> "UTF-8"],
+ExpressionUUID->"4c2868f5-25c5-43e8-b0b7-12d31a0a9106"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "ExtendedExamples"->{
+  Cell[8340, 255, 488, 13, 57, "ExtendedExamplesSection",ExpressionUUID->"032a9984-9cf8-4f16-9efc-56827ad094f2",
+   CellTags->"ExtendedExamples",
+   CellID->2002713944]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"ExtendedExamples", 16939, 510}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[576, 22, 105, 1, 73, "ObjectName",ExpressionUUID->"3a59cd3f-aa84-484c-8c9d-bc7e37876e48",
+ CellID->354800],
+Cell[684, 25, 686, 17, 76, "Usage",ExpressionUUID->"e2e44746-ae14-4e5d-a9e0-96d6931afd9e",
+ CellID->1205012398],
+Cell[1373, 44, 273, 6, 26, "Notes",ExpressionUUID->"5d730285-a06f-4070-8b0f-2328ea865fe6",
+ CellID->1323799617],
+Cell[1649, 52, 136, 1, 26, "Notes",ExpressionUUID->"c3d4e5f6-a7b8-9012-cdef-123456789012",
+ CellID->1323799618],
+Cell[1788, 55, 567, 15, 26, "Notes",ExpressionUUID->"f6a7b8c9-d0e1-2345-fabc-456789012345",
+ CellID->1323799619],
+Cell[2358, 72, 569, 15, 26, "Notes",ExpressionUUID->"c9d0e1f2-a3b4-5678-cdef-789012345678",
+ CellID->1323799620],
+Cell[2930, 89, 213, 4, 26, "Notes",ExpressionUUID->"d0e1f2a3-b4c5-6789-defa-890123456789",
+ CellID->1323799621]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3180, 98, 459, 13, 39, "SeeAlsoSection",ExpressionUUID->"fafcf0af-e939-4a8e-b177-922e10931d4c",
+ CellID->1192751671],
+Cell[3642, 113, 955, 23, 19, "SeeAlso",ExpressionUUID->"aa263b2c-50d7-4a03-8f1c-9578b015afac",
+ CellID->1659708487]
+}, Open  ]],
+Cell[4612, 139, 435, 12, 40, "TechNotesSection",ExpressionUUID->"90d6f341-a33c-4be0-9f97-31021ac1605b",
+ CellID->495560011],
+Cell[5050, 153, 117, 1, 38, "MoreAboutSection",ExpressionUUID->"6cab6112-698a-4d4c-bfc6-8f0c351f1596",
+ CellID->341460774],
+Cell[CellGroupData[{
+Cell[5192, 158, 473, 13, 25, "RelatedLinksSection",ExpressionUUID->"e3213627-d878-41d6-9806-a6d49de5afd1",
+ CellID->1854919821],
+Cell[5668, 173, 269, 5, 18, "RelatedLinks",ExpressionUUID->"7c0986a3-91c2-416c-ac0d-6456942a1fb1",
+ CellID->736223186]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5974, 183, 531, 14, 69, "ExamplesInitializationSection",ExpressionUUID->"e21d3610-0409-42ae-88fc-1dbc380fa4c6",
+ CellID->2132030958],
+Cell[6508, 199, 173, 3, 47, "ExampleInitialization",ExpressionUUID->"350b7f89-0330-41d2-8450-de97d5c5e2b0",
+ CellID->1564855684]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6718, 207, 443, 12, 70, "PrimaryExamplesSection",ExpressionUUID->"f24b39e0-3c0c-41b6-82c7-ad10e0488396",
+ CellID->1822645631],
+Cell[7164, 221, 128, 1, 23, "ExampleText",ExpressionUUID->"10000001-0000-0000-0000-000000000001",
+ CellID->100000001],
+Cell[7295, 224, 200, 4, 26, "Input",ExpressionUUID->"10000002-0000-0000-0000-000000000002",
+ CellID->100000002],
+Cell[7498, 230, 134, 1, 23, "ExampleText",ExpressionUUID->"10000003-0000-0000-0000-000000000003",
+ CellID->100000003],
+Cell[7635, 233, 171, 3, 26, "Input",ExpressionUUID->"10000004-0000-0000-0000-000000000004",
+ CellID->100000004],
+Cell[7809, 238, 172, 3, 26, "Input",ExpressionUUID->"10000005-0000-0000-0000-000000000005",
+ CellID->100000005],
+Cell[7984, 243, 159, 2, 23, "ExampleText",ExpressionUUID->"10000006-0000-0000-0000-000000000006",
+ CellID->100000006],
+Cell[8146, 247, 157, 3, 26, "Input",ExpressionUUID->"10000007-0000-0000-0000-000000000007",
+ CellID->100000007]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8340, 255, 488, 13, 57, "ExtendedExamplesSection",ExpressionUUID->"032a9984-9cf8-4f16-9efc-56827ad094f2",
+ CellTags->"ExtendedExamples",
+ CellID->2002713944],
+Cell[CellGroupData[{
+Cell[8853, 272, 241, 5, 32, "ExampleSection",ExpressionUUID->"d51d81f4-aefb-4b17-bfa2-86fe003dfdf7",
+ CellID->926816824],
+Cell[9097, 279, 150, 1, 23, "ExampleText",ExpressionUUID->"10000010-0000-0000-0000-000000000010",
+ CellID->100000010],
+Cell[9250, 282, 164, 3, 26, "Input",ExpressionUUID->"10000011-0000-0000-0000-000000000011",
+ CellID->100000011],
+Cell[9417, 287, 164, 3, 26, "Input",ExpressionUUID->"10000012-0000-0000-0000-000000000012",
+ CellID->100000012],
+Cell[9584, 292, 165, 3, 26, "Input",ExpressionUUID->"10000013-0000-0000-0000-000000000013",
+ CellID->100000013]
+}, Open  ]],
+Cell[9764, 298, 264, 5, 32, "ExampleSection",ExpressionUUID->"732accfa-ed84-441c-81c0-06217e69c784",
+ CellID->796713006],
+Cell[10031, 305, 244, 5, 20, "ExampleSection",ExpressionUUID->"84fc9471-cf70-478f-8b5a-b93150375765",
+ CellID->1703738072],
+Cell[CellGroupData[{
+Cell[10300, 314, 249, 5, 20, "ExampleSection",ExpressionUUID->"ff819f7b-f176-4d32-9599-cfa1609006a3",
+ CellID->1355117666],
+Cell[10552, 321, 177, 3, 23, "ExampleText",ExpressionUUID->"10000020-0000-0000-0000-000000000020",
+ CellID->100000020],
+Cell[10732, 326, 200, 4, 26, "Input",ExpressionUUID->"10000021-0000-0000-0000-000000000021",
+ CellID->100000021],
+Cell[10935, 332, 252, 5, 26, "Input",ExpressionUUID->"10000022-0000-0000-0000-000000000022",
+ CellID->100000022],
+Cell[11190, 339, 334, 7, 26, "Input",ExpressionUUID->"10000023-0000-0000-0000-000000000023",
+ CellID->100000023],
+Cell[11527, 348, 130, 1, 23, "ExampleText",ExpressionUUID->"10000024-0000-0000-0000-000000000024",
+ CellID->100000024],
+Cell[11660, 351, 217, 5, 26, "Input",ExpressionUUID->"10000025-0000-0000-0000-000000000025",
+ CellID->100000025]
+}, Open  ]],
+Cell[11892, 359, 259, 5, 32, "ExampleSection",ExpressionUUID->"5fb6c76a-c09c-452e-96d6-8c623d852b8a",
+ CellID->2121363768],
+Cell[CellGroupData[{
+Cell[12176, 368, 250, 5, 20, "ExampleSection",ExpressionUUID->"fc500816-49de-4cf7-b4f2-2453cd699c44",
+ CellID->63135751],
+Cell[12429, 375, 143, 1, 23, "ExampleText",ExpressionUUID->"10000030-0000-0000-0000-000000000030",
+ CellID->100000030],
+Cell[12575, 378, 164, 3, 26, "Input",ExpressionUUID->"10000031-0000-0000-0000-000000000031",
+ CellID->100000031]
+}, Open  ]],
+Cell[12754, 384, 257, 5, 32, "ExampleSection",ExpressionUUID->"abeb4e55-7e32-4076-8032-9d09c2349b60",
+ CellID->1339017150],
+Cell[13014, 391, 250, 5, 20, "ExampleSection",ExpressionUUID->"8e48cf7e-965e-4492-99e6-4cf8a747ddb0",
+ CellID->1044708344]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13301, 401, 111, 1, 71, "MetadataSection",ExpressionUUID->"49140271-b606-461c-85fc-5da1a6edb710",
+ CellID->1789002086],
+Cell[13415, 404, 480, 12, 25, "History",ExpressionUUID->"76b93e53-c25d-48bf-82da-0c5cbe0061d2",
+ CellID->1199926962],
+Cell[CellGroupData[{
+Cell[13920, 420, 485, 13, 20, "CategorizationSection",ExpressionUUID->"c7de4e6d-8c6a-4732-94e9-1daf0f73aaa3",
+ CellID->1013863878],
+Cell[14408, 435, 135, 2, 70, "Categorization",ExpressionUUID->"d46cc0ca-c276-4f1e-9d7c-69443cade015",
+ CellID->1327038404],
+Cell[14546, 439, 141, 2, 70, "Categorization",ExpressionUUID->"a130fad1-feb9-4625-8fda-1e5fdfda1323",
+ CellID->1474282988],
+Cell[14690, 443, 138, 2, 70, "Categorization",ExpressionUUID->"45be9303-1a3c-473e-bd10-6692774bbacd",
+ CellID->1759639072],
+Cell[14831, 447, 149, 2, 70, "Categorization",ExpressionUUID->"cd87142f-4be4-4404-bf64-ef8c6181d498",
+ CellID->1327393204]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[15017, 454, 110, 1, 20, "KeywordsSection",ExpressionUUID->"3bda5161-825c-4204-aad1-d90f250aa92a",
+ CellID->531811738],
+Cell[15130, 457, 100, 1, 70, "Keywords",ExpressionUUID->"927d684e-de4b-4c73-9845-eff34adbf2c9",
+ CellID->935955041],
+Cell[15233, 460, 101, 1, 70, "Keywords",ExpressionUUID->"92700001-0000-0000-0000-000000000001",
+ CellID->935955042],
+Cell[15337, 463, 120, 1, 70, "Keywords",ExpressionUUID->"92700002-0000-0000-0000-000000000002",
+ CellID->935955043],
+Cell[15460, 466, 109, 1, 70, "Keywords",ExpressionUUID->"92700003-0000-0000-0000-000000000003",
+ CellID->935955044],
+Cell[15572, 469, 98, 1, 70, "Keywords",ExpressionUUID->"92700004-0000-0000-0000-000000000004",
+ CellID->935955045]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[15707, 475, 119, 1, 20, "TemplatesSection",ExpressionUUID->"1f35582f-7220-45e9-98f6-378f3ad3fffa",
+ CellID->372661228],
+Cell[15829, 478, 147, 2, 70, "Template",ExpressionUUID->"7c836933-e661-4d23-b958-7d6a809fff49",
+ CellID->44036578],
+Cell[15979, 482, 138, 2, 70, "Template",ExpressionUUID->"239aea5f-e158-4d22-a6c3-2b2e73717ceb",
+ CellID->1431515052],
+Cell[16120, 486, 135, 2, 70, "Template",ExpressionUUID->"66515433-efd9-4bb4-9d17-7f1b9e092d2b",
+ CellID->224806788],
+Cell[16258, 490, 137, 2, 70, "Template",ExpressionUUID->"822ba1db-3036-4f5d-bd56-b599b1d19298",
+ CellID->385497352]
+}, Closed]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
