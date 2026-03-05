@@ -6,6 +6,8 @@ $KyberSecurityLevels = {512, 768, 1024};
 
 (* ---- Messages ---- *)
 
+EncapsulatedKey;
+
 KyberKeyGen::nolib = "Could not load the Kyber shared library at `1`.";
 KyberKeyGen::buildfail = "Build step failed. Command: `1`";
 KyberKeyGen::badlvl = "Security level `1` is not valid. Use 512, 768, or 1024.";

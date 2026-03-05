@@ -49,8 +49,8 @@ KyberKeyGen[level_ : 768] := Module[{lvl, result, pvtKey, pubKey},
 (* ::Section:: *)(* KyberEncapsulate *)
 (* Description:  Encapsulate a shared secret using the recipient's public key and specified security level.
  * Return:       <|
- *                   "Ciphertext" -> _ByteArray,
- *                   "SharedSecret" -> _ByteArray
+ *                   "EncapsulatedKey" -> _EncapsulatedKey,
+ *                   "SharedSecret"    -> _ByteArray
  *               |>
  *)
 KyberEncapsulate[publicKey_List, level_ : 768] :=
@@ -92,11 +92,11 @@ KyberEncapsulate[publicKey_ByteArray, level_ : 768] := Module[
 	];
 
 	<|
-		"CipherText"   ->
-			EncryptedObject[<|
-				"Cipher" -> cipher,
-				"OriginalForm" -> ByteArray,
-				"Data" -> ByteArray[ct]
+		"EncapsulatedKey" ->
+			EncapsulatedKey[<|
+				"Type"         -> "ML-KEM",
+				"ParameterSet" -> lvl,
+				"CipherText"   -> ByteArray[ct]
 			|>],
 		"SharedSecret" ->
 			SymmetricKey[<|
@@ -113,7 +113,13 @@ KyberEncapsulate[publicKey_ByteArray, level_ : 768] := Module[
  * Return:       _ByteArray
  *)
 KyberDecapsulate[
-	cipherText_EncryptedObject,
+	cipherText_EncapsulatedKey,
+	privateKey_
+] := Module[{},
+	KyberDecapsulate[cipherText["CipherText"], privateKey]
+];
+KyberDecapsulate[
+	cipherText_,
 	privateKey: PrivateKey[
 		KeyValuePattern[{
 			"Type" -> "ML-KEM",
@@ -123,7 +129,7 @@ KyberDecapsulate[
 		}]
 	]
 ] := Module[{},
-	KyberDecapsulate[cipherText["Data"], privateKey["PrivateByteArray"]]
+	KyberDecapsulate[cipherText, privateKey["PrivateByteArray"]]
 ];
 KyberDecapsulate[ciphertext_List, secretKey_List, level_ : 768] :=
 	KyberDecapsulate[ByteArray[ciphertext], ByteArray[secretKey], level];
