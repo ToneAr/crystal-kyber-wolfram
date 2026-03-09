@@ -122,8 +122,19 @@ GenerateAsymmetricKeyPair // Options = Join[
 		"ParameterSet" -> 768
 	}
 ];
+GenerateAsymmetricKeyPair[
+	"Method" -> ("ML-KEM" | "Kyber"),
+	OptionsPattern[{
+		"ParameterSet" -> 768
+	}]
+] := KyberKeyGen[OptionValue["ParameterSet"]];
 GenerateAsymmetricKeyPair["ML-KEM"|"Kyber", OptionsPattern[]] :=
 	KyberKeyGen[OptionValue["ParameterSet"]];
+
+DownValues[GenerateAsymmetricKeyPair] = SortBy[
+	DownValues[GenerateAsymmetricKeyPair],
+	FreeQ["ML-KEM"]
+];
 
 Protect[GenerateAsymmetricKeyPair];
 

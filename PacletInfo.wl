@@ -5,7 +5,7 @@ PacletObject[
 	"Creator" -> "Antonis Aristeidou",
 	"License" -> "Apache-2.0",
 	"PublisherID" -> "ToneAr",
-	"Version" -> "1.1.0",
+	"Version" -> "1.1.2",
 	"WolframVersion" -> "14.+",
 	"PrimaryContext" -> "ToneAr`Kyber`",
 	"Extensions" -> {
@@ -20,6 +20,12 @@ PacletObject[
 		},
 		{"Documentation",
 			"Language" -> "English"
+		},
+		{"Source",
+			"Root" -> "src"
+		},
+		{"Kyber",
+			"Root" -> "kyber"
 		}
 	}
 |>
